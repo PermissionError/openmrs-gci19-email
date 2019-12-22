@@ -17,11 +17,17 @@
             100%{background: #F26522}
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="resources/jquery.rwdImageMaps.min.js"></script>
 </head>
 <body style="overflow-y: auto">
     <div id="backdrop-animation" style="width: 100vw; height: 100vh; z-index: 0; position: fixed; top: 0; left: 0;"></div>
     <div class="card card-body my-5 d-flex justify-content-center text-center" style="width: 70vw; height: 100vh; z-index: 10; top: 0; left: 15vw; position: absolute; overflow-y: visible">
-        <img class="mx-auto" src="resources/gci-at-omrs.png" alt="GCI @ OpenMRS" style="max-width: 40vw; min-width: 0; height: auto; overflow-y: hidden;">
+        <img class="mx-auto" src="resources/gci-at-omrs.png" alt="GCI @ OpenMRS" style="max-width: 40vw; min-width: 0; height: auto; overflow-y: hidden;" usemap="#image-map">
+        <map name="image-map">
+            <area target="_blank" alt="Google Code-In" title="Google Code-In" href="https://g.co/gci" coords="144,116,882,846" shape="rect">
+            <area target="_blank" alt="OpenMRS" title="OpenMRS" href="https://openmrs.org" coords="2206,838,1481,112" shape="rect">
+        </map>
         <br/>
         <div class="text-left mx-5" style="overflow-y: auto">
             <p style="font-family: 'Khmer Sangam MN'; font-size: 1.5rem;">Hi <strong>PermissionError</strong>,<br/><br/>
@@ -32,5 +38,10 @@
                 OpenMRS</p>
         </div>
     </div>
+    <script>
+        $(document).ready(function(e) {
+            $('img[usemap]').rwdImageMaps();
+        })
+    </script>
 </body>
 </html>
